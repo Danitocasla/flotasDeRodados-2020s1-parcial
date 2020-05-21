@@ -1,6 +1,60 @@
+import trafic.*
+import dependencia.*
+import rodados.*
 
-test "testX" {
-
-	assert.that(true)
-
+test "test dependencias" {
+	const deportes = new Dependencia()
+	const cultura = new Dependencia()
+	deportes.setCantEmpleados(45)
+	cultura.setCantEmpleados(31)
+	
+	const cachito = new ChevroletCorsa()
+	cachito.setColor("Rojo")
+	const corsaAzul = new ChevroletCorsa()
+	corsaAzul.setColor("Azul")
+	const corsaVerde = new ChevroletCorsa()
+	corsaVerde.setColor("Verde")
+	const kwid1 = new RenaultKwid()
+	kwid1.setTanqueAdicional(true)
+	const autoEspecial = new AutosEspeciales()
+	autoEspecial.setCapacidad(5)
+	autoEspecial.setVelocidad(160)
+	autoEspecial.setPeso(1200)
+	autoEspecial.setColor("Beige")
+	const kwid2 = new RenaultKwid()
+	kwid2.setTanqueAdicional(true)
+	const kwid3 = new RenaultKwid()
+	kwid3.setTanqueAdicional(true)
+	const kwid4 = new RenaultKwid()
+	kwid4.setTanqueAdicional(false)
+	trafic.setMotor(bataton)
+	trafic.setInterior(popular)
+	
+	deportes.agregarAFlota(cachito)
+	deportes.agregarAFlota(corsaAzul)
+	deportes.agregarAFlota(corsaVerde)
+	deportes.agregarAFlota(kwid1)
+	deportes.agregarAFlota(autoEspecial)
+	
+	cultura.agregarAFlota(cachito)
+	cultura.agregarAFlota(kwid2)
+	cultura.agregarAFlota(kwid3)
+	cultura.agregarAFlota(kwid4)
+	cultura.agregarAFlota(trafic)
+	
+	//deportes
+	assert.that(true)//peso total de la flota
+	assert.that(true)//si esta o no bien equipada
+	assert.that(true)//capacidad total en color azul
+	assert.that(true)//el color del rodado mas rapido
+	assert.that(true)//si es grante o no
+	assert.equals(25, actual)//capacidad faltante
+	
+	//cultura
+	assert.that(true)//peso total de la flota
+	assert.that(true)//si esta o no bien equipada
+	assert.that(true)//capacidad total en color azul
+	assert.that(true)//el color del rodado mas rapido
+	assert.that(true)//si es grante o no
+	assert.that(true)//capacidad faltante
 }
