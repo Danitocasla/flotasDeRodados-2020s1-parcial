@@ -1,4 +1,4 @@
-class Abc {
+object trafic {
 	
 	
 }
