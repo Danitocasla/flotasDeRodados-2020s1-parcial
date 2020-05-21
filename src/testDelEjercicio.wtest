@@ -43,12 +43,12 @@ test "test dependencias" {
 	cultura.agregarAFlota(trafic)
 	
 	//deportes
-	assert.that(true)//peso total de la flota
-	assert.that(true)//si esta o no bien equipada
+	assert.equals(6450, deportes.pesoTotalFlota())//peso total de la flota
+	assert.that(deportes.estaBienEquipada())//si esta o no bien equipada
 	assert.that(true)//capacidad total en color azul
 	assert.that(true)//el color del rodado mas rapido
 	assert.that(true)//si es grante o no
-	assert.equals(25, actual)//capacidad faltante
+	//assert.equals(25, actual)//capacidad faltante
 	
 	//cultura
 	assert.that(true)//peso total de la flota
@@ -56,5 +56,5 @@ test "test dependencias" {
 	assert.that(true)//capacidad total en color azul
 	assert.that(true)//el color del rodado mas rapido
 	assert.that(true)//si es grante o no
-	assert.that(true)//capacidad faltante
+	//assert.equals(5, actual)//capacidad faltante
 }
