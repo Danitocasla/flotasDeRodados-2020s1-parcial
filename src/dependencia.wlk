@@ -1,11 +1,11 @@
 class Dependencia {
 	
 	var flotaDeRodados = []
-	var empleados
+	var cantEmpleados
 	
-	method empleados(){return empleados}
+	method empleados(){return cantEmpleados}
 	method setCantEmpleados(cantidad){
-		empleados = cantidad
+		cantEmpleados = cantidad
 	}
 	method agregarAFlota(rodado){
 		flotaDeRodados.add(rodado)
@@ -35,9 +35,9 @@ class Dependencia {
 		}).color()
 	}
 	method capacidadFaltante(){
-		return empleados - flotaDeRodados.sum({rod => rod.capacidad()})
+		return cantEmpleados - flotaDeRodados.sum({rod => rod.capacidad()})
 	}
 	method esGrande(){
-		return empleados>=40 and flotaDeRodados.size()>=5
+		return cantEmpleados>=40 and flotaDeRodados.size()>=5
 	}
 }
