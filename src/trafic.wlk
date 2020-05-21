@@ -29,7 +29,7 @@ object pulenta{
 	method velocidadMaxima(){return 130}
 	method peso(){return 800}
 }
-object baraton{
+object bataton{
 	method velocidadMaxima(){return 80}
 	method peso(){return 500}
 }
