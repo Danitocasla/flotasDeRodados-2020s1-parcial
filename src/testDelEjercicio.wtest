@@ -9,18 +9,18 @@ test "test dependencias" {
 	cultura.setCantEmpleados(31)
 	
 	const cachito = new ChevroletCorsa()
-	cachito.setColor("Rojo")
+	cachito.setColor(rojo)
 	const corsaAzul = new ChevroletCorsa()
-	corsaAzul.setColor("Azul")
+	corsaAzul.setColor(azul)
 	const corsaVerde = new ChevroletCorsa()
-	corsaVerde.setColor("Verde")
+	corsaVerde.setColor(verde)
 	const kwid1 = new RenaultKwid()
 	kwid1.setTanqueAdicional(true)
 	const autoEspecial = new AutosEspeciales()
 	autoEspecial.setCapacidad(5)
 	autoEspecial.setVelocidad(160)
 	autoEspecial.setPeso(1200)
-	autoEspecial.setColor("Beige")
+	autoEspecial.setColor(beige)
 	const kwid2 = new RenaultKwid()
 	kwid2.setTanqueAdicional(true)
 	const kwid3 = new RenaultKwid()
@@ -36,25 +36,25 @@ test "test dependencias" {
 	deportes.agregarAFlota(kwid1)
 	deportes.agregarAFlota(autoEspecial)
 	
-	cultura.agregarAFlota(cachito)
-	cultura.agregarAFlota(kwid2)
-	cultura.agregarAFlota(kwid3)
-	cultura.agregarAFlota(kwid4)
-	cultura.agregarAFlota(trafic)
+	cultura.agregarAFlota(cachito) //rojo          150
+	cultura.agregarAFlota(kwid2)   //azul   cap 3  120
+	cultura.agregarAFlota(kwid3)   //azul   cap 3  120
+	cultura.agregarAFlota(kwid4)   //azul   cap 4  110
+	cultura.agregarAFlota(trafic)  //blanca         80
 	
 	//deportes
 	assert.equals(6450, deportes.pesoTotalFlota())//peso total de la flota
 	assert.that(deportes.estaBienEquipada())//si esta o no bien equipada
-	assert.that(true)//capacidad total en color azul
-	assert.that(true)//el color del rodado mas rapido
-	assert.that(true)//si es grante o no
-	//assert.equals(25, actual)//capacidad faltante
+	assert.equals(7, deportes.capacidadTotalEnColor(azul))//capacidad total en color azul
+	assert.equals(beige, deportes.colorDelRodadoMasRapido())//el color del rodado mas rapido
+	assert.that(deportes.esGrande())//si es grante o no
+	assert.equals(25, deportes.capacidadFaltante())//capacidad faltante
 	
 	//cultura
-	assert.that(true)//peso total de la flota
-	assert.that(true)//si esta o no bien equipada
-	assert.that(true)//capacidad total en color azul
-	assert.that(true)//el color del rodado mas rapido
-	assert.that(true)//si es grante o no
-	//assert.equals(5, actual)//capacidad faltante
+	assert.equals(6700, cultura.pesoTotalFlota())//peso total de la flota
+	assert.notThat(cultura.estaBienEquipada())//si esta o no bien equipada
+	assert.equals(10, cultura.capacidadTotalEnColor(azul))//capacidad total en color azul
+	assert.equals(rojo, cultura.colorDelRodadoMasRapido())//el color del rodado mas rapido
+	assert.notThat(cultura.esGrande())//si es grante o no
+	assert.equals(5, cultura.capacidadFaltante())//capacidad faltante
 }

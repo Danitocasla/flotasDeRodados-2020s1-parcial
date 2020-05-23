@@ -1,3 +1,5 @@
+import rodados.*
+import trafic.*
 class Dependencia {
 	
 	var flotaDeRodados = []
@@ -25,9 +27,9 @@ class Dependencia {
 			})
 	}
 	method capacidadTotalEnColor(color){
-		return flotaDeRodados.find({
+		return flotaDeRodados.filter({
 			rod => rod.color()==color
-		}).map({rod => rod.capacidad()})
+		}).sum({rod=>rod.capacidad()})
 	}
 	method colorDelRodadoMasRapido(){
 		return flotaDeRodados.max({

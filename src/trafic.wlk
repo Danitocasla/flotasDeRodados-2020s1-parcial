@@ -10,7 +10,7 @@ object trafic {
 	}
 	method capacidad(){return interior.capacidad()}
 	method velocidadMaxima(){return motor.velocidadMaxima()}
-	method color(){return "Blanco"}
+	method color(){return blanco}
 	method peso(){
 		return interior.peso() + motor.peso()
 	}
@@ -33,3 +33,4 @@ object bataton{
 	method velocidadMaxima(){return 80}
 	method peso(){return 500}
 }
+object blanco{}
