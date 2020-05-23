@@ -3,13 +3,11 @@ import trafic.blanco
 class ChevroletCorsa {
 	var color
 
-	const velocidadMaxima = 150
-	const peso = 1300
 	method capacidad(){
 		return 4
 	}
 	method velocidadMaxima(){
-		return velocidadMaxima
+		return 150
 	}
 	method color(){
 		return color
@@ -18,27 +16,24 @@ class ChevroletCorsa {
 		color = colorStr
 	}
 	method peso(){
-		return peso
+		return 1300
 	}
 }
 class RenaultKwid {
 	var tanqueAdicional
-	const color = azul
-	const capacidad = 3
-	const velocidadMaxima = 110
-	const peso = 1200
+	
 	method setTanqueAdicional(condicion){
 		tanqueAdicional = condicion
 	}
 	method capacidad(){
-		return if(tanqueAdicional){capacidad} else {capacidad + 1}
+		return if(tanqueAdicional){3} else {4}
 	}
 	method velocidadMaxima(){
-		return if(tanqueAdicional){velocidadMaxima + 10} else{velocidadMaxima}
+		return if(tanqueAdicional){120} else{110}
 	}
-	method color(){return color}
+	method color(){return azul}
 	method peso(){
-		return if(tanqueAdicional){peso+150} else{peso}
+		return if(tanqueAdicional){1350} else{1200}
 	}
 }
 class AutosEspeciales {
