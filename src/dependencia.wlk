@@ -36,8 +36,13 @@ class Dependencia {
 			rod => rod.velocidadMaxima()
 		}).color()
 	}
+	// agrogo correcciones de código según clase
+	method capacidadTotal(){
+		return flotaDeRodados.sum({rod => rod.capacidad()})
+	}
 	method capacidadFaltante(){
-		return cantEmpleados - flotaDeRodados.sum({rod => rod.capacidad()})
+		// corregido en clase
+		return (cantEmpleados - self.capacidadTotal()).max(0)
 	}
 	method esGrande(){
 		return cantEmpleados>=40 and flotaDeRodados.size()>=5
